@@ -4,17 +4,17 @@ SRCS = main.cpp Fixed.cpp
 
 FLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 NAME = fixed
 
 all: $(NAME)
 
-.c.o:
-	clang++ $(FLAGS) -c $< -o $@
+.cpp.o:
+	c++ $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	clang++ $(FLAGS) -o $(NAME) $(OBJS)
+	c++ $(FLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -rf *.o
